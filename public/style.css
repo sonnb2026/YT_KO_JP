@@ -1804,8 +1804,6 @@ thead .col-num,
 .lang-badge--ja { color: #ff8a9a; background: rgba(188, 0, 45, 0.16); border-color: rgba(255, 138, 154, 0.35); }
 .lang-badge--other { color: var(--text-dim, #9aa4b2); background: rgba(154, 164, 178, 0.12); border-color: rgba(154, 164, 178, 0.3); }
 
-.lang-chip--ko.is-active { color: #0b1016; background: #7cb7ff; border-color: #7cb7ff; }
-.lang-chip--ja.is-active { color: #0b1016; background: #ff8a9a; border-color: #ff8a9a; }
 
 .modal__title-vi {
   font-size: 13.5px;
