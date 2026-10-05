@@ -1,0 +1,94 @@
+name: Fetch YouTube Data
+
+on:
+  schedule:
+    - cron: "0 23 * * *" # 23:00 UTC = 06:00 giờ Việt Nam, chạy 1 lần/ngày
+  workflow_dispatch:
+    inputs:
+      force_refresh_comments:
+        description: "Ép lấy lại toàn bộ bình luận + reply (bỏ qua cache)"
+        type: boolean
+        default: false
+      full_channel_history:
+        description: "Lấy TOÀN BỘ video của mỗi kênh (bỏ qua giới hạn ~50 video gần nhất) - tốn nhiều quota hơn"
+        type: boolean
+        default: false
+      full_history_channels:
+        description: "Chỉ lấy TOÀN BỘ lịch sử cho các kênh này (phân tách bởi dấu phẩy, để trống = không áp dụng riêng)"
+        type: string
+        default: ""
+  push:
+    paths:
+      - "channels.json"
+
+permissions:
+  contents: write
+
+# Chỉ cho 1 lượt fetch chạy tại 1 thời điểm. Thêm nhiều kênh liên tiếp qua web
+# (mỗi lần là 1 commit channels.json) hoặc bấm "Fetch dữ liệu" nhiều lần sẽ xếp
+# hàng chờ thay vì chạy song song - tránh tốn gấp nhiều lần quota và tránh
+# xung đột khi các job cùng commit public/data. Lượt đang chờ chỉ giữ 1 cái mới
+# nhất, nên 5 lần bấm liên tiếp chỉ thành tối đa 2 lượt chạy.
+concurrency:
+  group: fetch-youtube-data
+  cancel-in-progress: false
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Fetch YouTube data
+        env:
+          # Nếu có nhiều key: điền secret YOUTUBE_API_KEYS = "key1,key2" (phân tách bởi dấu phẩy).
+          # Nếu chỉ có 1 key: giữ nguyên secret YOUTUBE_API_KEY như cũ.
+          YOUTUBE_API_KEYS: ${{ secrets.YOUTUBE_API_KEYS }}
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+          MAX_VIDEOS_PER_CHANNEL: "50"
+          FULL_CHANNEL_HISTORY: ${{ github.event.inputs.full_channel_history || 'false' }}
+          FULL_HISTORY_CHANNELS: ${{ github.event.inputs.full_history_channels || '' }}
+          MAX_COMMENTS_PER_VIDEO: "100"
+          MAX_REPLIES_PER_COMMENT: "20"
+          COMMENT_ORDER: "relevance"
+          FORCE_REFRESH_COMMENTS: ${{ github.event.inputs.force_refresh_comments || 'false' }}
+        run: node scripts/fetch-data.mjs
+
+      - name: Commit updated data
+        if: ${{ !cancelled() }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add public/data
+          if git diff --staged --quiet; then
+            echo "Không có gì thay đổi."
+            exit 0
+          fi
+          git commit -m "chore: cập nhật dữ liệu YouTube $(date -u +'%Y-%m-%d %H:%M UTC')"
+
+          # main có thể đã nhận thêm commit khác trong lúc job này đang chạy
+          # (vd trang "Quản lý kênh" đổi tên/xoá tab qua GitHub Contents API,
+          # trigger commit đó không đi qua job này) - plain `git push` sẽ bị
+          # từ chối (non-fast-forward) trong trường hợp đó. Rebase lên
+          # main mới nhất rồi thử lại thay vì để cả job fail oan.
+          for i in 1 2 3 4 5; do
+            if git push; then
+              echo "Push thành công."
+              exit 0
+            fi
+            echo "Push bị từ chối (main có commit mới hơn) - rebase và thử lại (lần $i)..."
+            git fetch origin "$GITHUB_REF_NAME"
+            if ! git rebase "origin/$GITHUB_REF_NAME"; then
+              echo "Rebase thất bại - dừng lại, cần kiểm tra thủ công."
+              exit 1
+            fi
+            sleep $((RANDOM % 5 + 1))
+          done
+          echo "Push thất bại sau nhiều lần thử."
+          exit 1
