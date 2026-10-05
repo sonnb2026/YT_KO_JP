@@ -1,13 +1,13 @@
 {
   "list": "Korea",
-  "lastUpdated": "2026-10-05T08:55:25.559Z",
+  "lastUpdated": "2026-10-05T09:03:40.109Z",
   "channelCount": 10,
   "channelLinesConfigured": 11,
   "videoCount": 436,
   "languageCounts": {
     "ko": 436
   },
-  "quotaUnitsUsed": 657,
+  "quotaUnitsUsed": 31,
   "apiKeysConfigured": 2,
   "vph": {
     "minIntervalHours": 6,

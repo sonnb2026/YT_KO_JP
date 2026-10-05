@@ -1,11 +1,13 @@
 {
   "list": "Japan",
-  "lastUpdated": "2026-10-05T08:55:25.560Z",
-  "channelCount": 0,
-  "channelLinesConfigured": 0,
-  "videoCount": 0,
-  "languageCounts": {},
-  "quotaUnitsUsed": 0,
+  "lastUpdated": "2026-10-05T09:05:11.232Z",
+  "channelCount": 9,
+  "channelLinesConfigured": 9,
+  "videoCount": 740,
+  "languageCounts": {
+    "ja": 740
+  },
+  "quotaUnitsUsed": 960,
   "apiKeysConfigured": 2,
   "vph": {
     "minIntervalHours": 6,
@@ -13,7 +15,7 @@
     "fallbackMaxHours": 48,
     "maxSnapshots": 8
   },
-  "liveCount": 0,
+  "liveCount": 2,
   "allKeysExhausted": false,
   "errors": [],
   "replyErrors": []
