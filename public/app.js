@@ -337,7 +337,6 @@ let selectedViewGroups = new Set();
 let selectedChannelGroups = new Set(); // lọc bằng chip "Nhóm kênh" phía trên bảng
 let selectedTimeRanges = new Set(); // chip thời gian: lt10 | 10to30 | gt30
 let engagementOnly = false; // chip "Tương tác" = chỉ video có tỷ lệ tương tác > 1%
-let selectedLanguages = new Set(); // chip ngôn ngữ: ko | ja | other
 let baseVideos = [];
 const titleTranslations = new Map(); // videoId -> tiêu đề đã dịch
 
@@ -631,7 +630,6 @@ function switchList(listName) {
   els.search.value = "";
   selectedTimeRanges = new Set();
   selectedChannelGroups = new Set();
-  selectedLanguages = new Set();
   engagementOnly = false;
   loadData();
 }
@@ -1006,7 +1004,6 @@ function applyFilters() {
   // từ tập "base" để các chip không biến mất khi đang được chọn.
   baseVideos = allVideos.filter(passesBase);
   filteredVideos = baseVideos.filter((v) => {
-    if (selectedLanguages.size > 0 && !selectedLanguages.has(langKey(getVideoLang(v)))) return false;
     if (selectedChannelGroups.size > 0 && !selectedChannelGroups.has(classifyChannelGroup(v.subscriberCount).cls)) return false;
     if (selectedTimeRanges.size > 0 && !selectedTimeRanges.has(timeBucket(v))) return false;
     if (engagementOnly) {
@@ -1182,21 +1179,7 @@ function renderChannelGroupSummary() {
     .join("");
   const engageChip = `<button type="button" class="channel-group-badge channel-group-badge--engage channel-group-badge--filter${engagementOnly ? " is-active" : ""}" data-engage="1" title="Chỉ hiện video có tỷ lệ tương tác > 1%">Tương tác > 1% · ${fmtNumber(engageCount)} video</button>`;
 
-  const langCounts = { ko: 0, ja: 0, other: 0 };
-  for (const v of baseVideos) langCounts[langKey(getVideoLang(v))]++;
-  const langChips = Object.entries(langCounts)
-    .filter(([k, n]) => k !== "other" || n > 0)
-    .map(([k, n]) => {
-      const info = LANG_INFO[k];
-      const active = selectedLanguages.has(k) ? " is-active" : "";
-      return `<button type="button" class="channel-group-badge lang-chip lang-chip--${k} channel-group-badge--filter${active}" data-lang="${k}" title="Chỉ hiện video ${info.label.toLowerCase()} (bấm lại để bỏ lọc)">${info.flag} ${info.label} · ${fmtNumber(n)}</button>`;
-    })
-    .join("");
-
   els.channelGroupSummary.innerHTML =
-    `<span class="channel-group-summary__label">Ngôn ngữ:</span>` +
-    langChips +
-    `<span class="channel-group-summary__sep"></span>` +
     `<span class="channel-group-summary__label">Nhóm kênh (${channelSubs.size} kênh):</span>` +
     groupChips +
     `<span class="channel-group-summary__sep"></span>` +
@@ -1209,11 +1192,7 @@ function renderChannelGroupSummary() {
 els.channelGroupSummary.addEventListener("click", (e) => {
   const chip = e.target.closest(".channel-group-badge--filter");
   if (!chip) return;
-  if (chip.dataset.lang) {
-    const l = chip.dataset.lang;
-    if (selectedLanguages.has(l)) selectedLanguages.delete(l);
-    else selectedLanguages.add(l);
-  } else if (chip.dataset.engage) {
+  if (chip.dataset.engage) {
     engagementOnly = !engagementOnly;
   } else if (chip.dataset.time) {
     const t = chip.dataset.time;
