@@ -501,9 +501,11 @@ const METRIC_COLUMNS = {
   },
 };
 
-const METRIC_ORDER = ["language", "viewsPerHour", "daysAgo", "engagement", "channelGroup", "videoType"];
+const METRIC_ORDER = ["viewsPerHour", "daysAgo", "engagement", "channelGroup", "videoType"];
 // Cả 5 biến (View/giờ, Lịch sử đăng, Tương tác, Nhóm kênh, Loại video) luôn hiện trong bảng.
-const ALWAYS_VISIBLE_METRICS = ["language", "viewsPerHour", "daysAgo", "engagement", "channelGroup", "videoType"];
+// Cột "Ngôn ngữ" (METRIC_COLUMNS.language) không hiện trong bảng và không xuất ra
+// Excel. Ngôn ngữ vẫn hiện trong bảng bình luận của từng video và vẫn dùng để dịch.
+const ALWAYS_VISIBLE_METRICS = ["viewsPerHour", "daysAgo", "engagement", "channelGroup", "videoType"];
 const CONDITIONAL_METRICS = []; // không còn cột nào ẩn/hiện theo lựa chọn - "Nhóm kênh" giờ hiển thị cố định
 
 function getActiveColumns() {
