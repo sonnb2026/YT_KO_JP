@@ -1,0 +1,20 @@
+{
+  "list": "Japan",
+  "lastUpdated": "2026-10-05T08:55:25.560Z",
+  "channelCount": 0,
+  "channelLinesConfigured": 0,
+  "videoCount": 0,
+  "languageCounts": {},
+  "quotaUnitsUsed": 0,
+  "apiKeysConfigured": 2,
+  "vph": {
+    "minIntervalHours": 6,
+    "windowMaxHours": 24,
+    "fallbackMaxHours": 48,
+    "maxSnapshots": 8
+  },
+  "liveCount": 0,
+  "allKeysExhausted": false,
+  "errors": [],
+  "replyErrors": []
+}

@@ -1,0 +1,27 @@
+{
+  "list": "Korea",
+  "lastUpdated": "2026-10-05T08:55:25.559Z",
+  "channelCount": 10,
+  "channelLinesConfigured": 11,
+  "videoCount": 436,
+  "languageCounts": {
+    "ko": 436
+  },
+  "quotaUnitsUsed": 657,
+  "apiKeysConfigured": 2,
+  "vph": {
+    "minIntervalHours": 6,
+    "windowMaxHours": 24,
+    "fallbackMaxHours": 48,
+    "maxSnapshots": 8
+  },
+  "liveCount": 5,
+  "allKeysExhausted": false,
+  "errors": [
+    {
+      "channel": "https://www.youtube.com/@%EC%84%B8%EA%B3%84%EC%97%AC%ED%96%89%EC%9E%90-KR/featured",
+      "error": "Channel not found for \"https://www.youtube.com/@%EC%84%B8%EA%B3%84%EC%97%AC%ED%96%89%EC%9E%90-KR/featured\""
+    }
+  ],
+  "replyErrors": []
+}
