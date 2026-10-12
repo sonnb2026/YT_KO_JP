@@ -1787,7 +1787,7 @@ thead .col-num,
 .channel-group-badge--time { color: #f9a8d4; background: rgba(244, 114, 182, 0.13); border-color: rgba(244, 114, 182, 0.35); }
 
 
-/* ---------- Ngôn ngữ video (Tiếng Hàn / Tiếng Nhật) ---------- */
+/* ---------- Ngôn ngữ video ---------- */
 .lang-badge {
   display: inline-flex;
   align-items: center;
@@ -1802,8 +1802,8 @@ thead .col-num,
 }
 .lang-badge--ko { color: #7cb7ff; background: rgba(0, 71, 160, 0.18); border-color: rgba(124, 183, 255, 0.35); }
 .lang-badge--ja { color: #ff8a9a; background: rgba(188, 0, 45, 0.16); border-color: rgba(255, 138, 154, 0.35); }
-.lang-badge--other { color: var(--text-dim, #9aa4b2); background: rgba(154, 164, 178, 0.12); border-color: rgba(154, 164, 178, 0.3); }
-
+.lang-badge--fr { color: #b9a6ff; background: rgba(0, 35, 149, 0.2); border-color: rgba(185, 166, 255, 0.35); }
+.lang-badge--other { color: #9aa4b2; background: rgba(154, 164, 178, 0.12); border-color: rgba(154, 164, 178, 0.3); }
 
 .modal__title-vi {
   font-size: 13.5px;
