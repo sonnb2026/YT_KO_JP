@@ -207,19 +207,24 @@ function classifyViewRating(viewCount) {
   return { label: "Top View", cls: "top" };
 }
 
-// ---------- Ngôn ngữ video (Tiếng Hàn / Tiếng Nhật) ----------
-// scripts/fetch-data.mjs ghi v.language ("ko" | "ja" | mã khác | "und") cho từng
-// video, suy ra từ chữ viết trong tiêu đề/mô tả, metadata và ngôn ngữ chủ đạo của
+// ---------- Ngôn ngữ video (Tiếng Hàn / Tiếng Nhật / Tiếng Pháp) ----------
+// scripts/fetch-data.mjs ghi v.language ("ko" | "ja" | "fr" | mã khác | "und") cho từng
+// video, suy ra từ văn bản trong tiêu đề/mô tả, metadata và ngôn ngữ chủ đạo của
 // kênh (xem scripts/language.mjs). App dùng đúng ngôn ngữ này làm ngôn ngữ NGUỒN
 // khi dịch tiêu đề / bình luận sang Tiếng Việt và khi gửi dữ liệu cho trợ lý AI.
 const LANG_INFO = {
   ko: { label: "Tiếng Hàn", short: "Hàn", flag: "🇰🇷", cls: "ko", rank: 1 },
   ja: { label: "Tiếng Nhật", short: "Nhật", flag: "🇯🇵", cls: "ja", rank: 2 },
-  other: { label: "Ngôn ngữ khác", short: "Khác", flag: "🌐", cls: "other", rank: 3 },
+  fr: { label: "Tiếng Pháp", short: "Pháp", flag: "🇫🇷", cls: "fr", rank: 3 },
+  other: { label: "Ngôn ngữ khác", short: "Khác", flag: "🌐", cls: "other", rank: 4 },
 };
+// Ngôn ngữ được hỗ trợ đầy đủ (nhận diện, dịch đúng nguồn, nhãn riêng).
+const SUPPORTED_LANGS = ["ko", "ja", "fr"];
+// Mã ngôn ngữ in hoa dùng khi gửi dữ liệu cho trợ lý AI.
+const LANG_CODES = { ko: "KO", ja: "JA", fr: "FR" };
 const LANG_SOURCE_LABELS = {
-  title: "nhận diện từ chữ viết trong tiêu đề",
-  description: "nhận diện từ chữ viết trong mô tả video",
+  title: "nhận diện từ tiêu đề",
+  description: "nhận diện từ mô tả video",
   metadata: "theo ngôn ngữ chủ kênh khai báo cho video",
   channel: "theo ngôn ngữ chủ đạo của kênh",
   client: "nhận diện từ tiêu đề trên trình duyệt",
@@ -231,12 +236,46 @@ const KANA_RE = /[\u3040-\u309F\u30A0-\u30FF\u31F0-\u31FF\uFF66-\uFF9F]/g;
 const CJK_RE = /[\u3400-\u9FFF\uF900-\uFAFF]/;
 
 // Cùng quy tắc với scripts/language.mjs: có Hangul -> ko, có Kana -> ja.
-function detectScriptLang(text) {
+function detectScriptOnly(text) {
   if (!text) return null;
   const ko = (String(text).match(HANGUL_RE) || []).length;
   const ja = (String(text).match(KANA_RE) || []).length;
   if (!ko && !ja) return null;
   return ko >= ja ? "ko" : "ja";
+}
+
+// Tiếng Pháp - bản rút gọn của detectFrench() trong scripts/language.mjs (giữ
+// cùng danh sách từ và cùng ngưỡng điểm, xem giải thích chi tiết ở đó).
+const FR_STRONG = new Set([
+  "les", "aux", "avec", "dans", "cette", "très", "être", "était", "sont", "nous", "vous",
+  "pourquoi", "voici", "chez", "meilleur", "meilleurs", "meilleure", "meilleures",
+  "beaux", "découverte", "ça", "où", "jamais", "aujourd",
+]);
+const FR_WORDS = new Set([
+  "le", "des", "du", "une", "est", "et", "pour", "sur", "au", "ces", "ce", "ils",
+  "elle", "elles", "pas", "mais", "leur", "leurs", "sans", "quand", "tout", "tous",
+  "toute", "toutes", "même", "aussi", "notre", "votre", "qui", "monde", "ville", "pays",
+  "il", "on", "faire", "beau", "belle", "belles", "petit", "petite", "nouveau", "nouvelle",
+]);
+const FR_ELISION_RE = /\b(?:l|d|qu|c|j|n|s|m|t|jusqu|lorsqu|puisqu)['’][a-zàâäéèêëîïôöùûüÿœæ]/gi;
+const FR_CHARS_RE = /[çœèêëâîïôûù]/i;
+const NOT_FR_CHARS_RE = /[ñ¿¡ãõìò]/i;
+
+function detectFrenchLang(text) {
+  if (!text) return null;
+  const t = String(text);
+  if (NOT_FR_CHARS_RE.test(t)) return null;
+  const words = t.toLowerCase().match(/[a-zàâäçéèêëîïôöùûüÿœæ]+/g) || [];
+  let score = 0;
+  for (const w of words) score += FR_STRONG.has(w) ? 2 : FR_WORDS.has(w) ? 1 : 0;
+  score += (t.match(FR_ELISION_RE) || []).length;
+  if (FR_CHARS_RE.test(t)) score += 1;
+  return score >= 2 ? "fr" : null;
+}
+
+// Ngôn ngữ của 1 đoạn văn bản: chữ Hàn/Nhật trước, rồi tiếng Pháp.
+function detectScriptLang(text) {
+  return detectScriptOnly(text) || detectFrenchLang(text);
 }
 
 // Ngôn ngữ của video. Dữ liệu cũ chưa có trường language thì nhận diện tạm từ tiêu đề.
@@ -246,26 +285,28 @@ function getVideoLang(v) {
 }
 
 function langKey(lang) {
-  return lang === "ko" || lang === "ja" ? lang : "other";
+  return SUPPORTED_LANGS.includes(lang) ? lang : "other";
 }
 
 function langInfo(lang) {
   return LANG_INFO[langKey(lang)];
 }
 
-// Mã ngôn ngữ nguồn gửi cho Google Dịch: ko/ja dùng thẳng, còn lại để Google tự nhận diện.
+// Mã ngôn ngữ nguồn gửi cho Google Dịch: ko/ja/fr dùng thẳng, còn lại để Google tự nhận diện.
 function translateSource(lang) {
-  return lang === "ko" || lang === "ja" ? lang : "auto";
+  return SUPPORTED_LANGS.includes(lang) ? lang : "auto";
 }
 
 // Ngôn ngữ nguồn cho 1 bình luận/trả lời. Bình luận thường cùng ngôn ngữ với
 // video, nhưng khán giả quốc tế hay bình luận bằng tiếng khác (vd tiếng Anh dưới
-// video tiếng Hàn) - nên ưu tiên chữ viết thật của bình luận:
-//   có Hangul/Kana -> theo chữ viết; chỉ có Hán tự -> theo ngôn ngữ video;
-//   không có chữ CJK nào -> để Google tự nhận diện.
+// video tiếng Pháp) - nên ưu tiên văn bản thật của bình luận:
+//   có Hangul/Kana -> ko/ja; đủ dấu hiệu tiếng Pháp -> fr;
+//   chỉ có Hán tự -> theo ngôn ngữ video (ko/ja);
+//   còn lại (bình luận ngắn, tiếng Anh, emoji...) -> để Google tự nhận diện.
+//   Không ép theo ngôn ngữ video Pháp vì bình luận chữ Latin rất hay là tiếng Anh.
 function commentSourceLang(text, videoLang) {
-  const byScript = detectScriptLang(text);
-  if (byScript) return byScript;
+  const detected = detectScriptLang(text);
+  if (detected) return detected;
   if (CJK_RE.test(text || "") && (videoLang === "ko" || videoLang === "ja")) return videoLang;
   return "auto";
 }
@@ -335,7 +376,7 @@ const CHANNEL_GROUP_OPTIONS = [
 // Rỗng = không lọc (hiện tất cả). Có ≥1 phần tử = chỉ hiện video thuộc các nhóm đã chọn.
 let selectedViewGroups = new Set();
 let selectedChannelGroups = new Set(); // lọc bằng chip "Nhóm kênh" phía trên bảng
-let selectedTimeRanges = new Set(); // chip thời gian: lt2 | lt10 | 10to30 | gt30
+let selectedTimeRanges = new Set(); // chip thời gian: lt2 | lt10 | 10to30 | 0to30 | gt30
 let engagementOnly = false; // chip "Tương tác" = chỉ video có tỷ lệ tương tác > 1%
 let baseVideos = [];
 const titleTranslations = new Map(); // videoId -> tiêu đề đã dịch
@@ -1129,13 +1170,15 @@ function renderTable() {
 // này cũng luôn hiện khi có nhiều hơn 1 kênh trong dữ liệu đang lọc (tích chọn
 // nhiều kênh -> tự động tập hợp và hiển thị số kênh theo từng nhóm). ----------
 // Khoảng thời gian theo số ngày kể từ khi đăng (đăng hôm nay = 0), [minDays, maxDays]:
-//   Dưới 2 ngày: 0-2 | Dưới 10 ngày: 0-9 | Từ 10 - 30 ngày: 10-29 | Trên 30 ngày: từ 30
-// "Dưới 2 ngày" nằm TRONG "Dưới 10 ngày" (2 chip có thể cùng đếm 1 video). Chọn
-// nhiều chip = hợp các khoảng, nên chọn cả hai cũng ra đúng kết quả "Dưới 10 ngày".
+//   Dưới 2 ngày: 0-2 | Dưới 10 ngày: 0-9 | Từ 10 - 30 ngày: 10-29
+//   | 0 - 30 ngày: 0-30 (tính cả ngày 30) | Trên 30 ngày: từ 30
+// Các khoảng có thể chồng nhau (1 video có thể được đếm ở nhiều chip). Chọn
+// nhiều chip = hợp các khoảng.
 const TIME_RANGE_OPTIONS = [
   { cls: "lt2", label: "Dưới 2 ngày", minDays: 0, maxDays: 2 },
   { cls: "lt10", label: "Dưới 10 ngày", minDays: 0, maxDays: 9 },
   { cls: "10to30", label: "Từ 10 - 30 ngày", minDays: 10, maxDays: 29 },
+  { cls: "0to30", label: "0 - 30 ngày", minDays: 0, maxDays: 30 },
   { cls: "gt30", label: "Trên 30 ngày", minDays: 30, maxDays: Infinity },
 ];
 function inTimeRange(v, cls) {
@@ -1224,10 +1267,20 @@ function googleTranslateLink(text, sl) {
   return `https://translate.google.com/?sl=${encodeURIComponent(sl)}&tl=vi&text=${encodeURIComponent(text)}&op=translate`;
 }
 
+// Ngôn ngữ nguồn khi dịch tiêu đề. Hàn/Nhật: luôn theo ngôn ngữ video (quan trọng
+// với tiêu đề chỉ có Hán tự, Google rất dễ nhận nhầm thành tiếng Trung). Pháp: chỉ
+// ép "fr" khi chính tiêu đề có dấu hiệu tiếng Pháp - kênh Pháp đôi khi đặt tiêu đề
+// tiếng Anh, và với chữ Latin thì Google tự nhận diện đã rất chính xác.
+function titleSourceLang(v) {
+  const lang = getVideoLang(v);
+  if (lang === "fr") return detectFrenchLang(v.title) ? "fr" : "auto";
+  return translateSource(lang);
+}
+
 // Bản dịch tiêu đề dùng chung cho tooltip trong bảng và modal bình luận.
 async function getTitleTranslation(v) {
   if (titleTranslations.has(v.videoId)) return titleTranslations.get(v.videoId);
-  const text = await translateText(v.title, translateSource(getVideoLang(v)));
+  const text = await translateText(v.title, titleSourceLang(v));
   titleTranslations.set(v.videoId, text);
   return text;
 }
@@ -1969,7 +2022,7 @@ loadTabs().then(loadData);
 
   const langCode = (v) => {
     const l = getVideoLang(v);
-    return l === "ko" ? "KO" : l === "ja" ? "JA" : l === "und" ? "?" : l.toUpperCase();
+    return LANG_CODES[l] || (l === "und" ? "?" : l.toUpperCase());
   };
 
   function buildFullVideoList(list) {
@@ -2138,7 +2191,7 @@ loadTabs().then(loadData);
       setApiKey(text);
       input.value = "";
       input.dataset.mode = "";
-      input.placeholder = "Khán giả Hàn và Nhật đang bình luận gì?";
+      input.placeholder = "Khán giả đang bình luận gì nhiều nhất?";
       appendMessage("Đã lưu API key trên trình duyệt này. Giờ anh hỏi được rồi!", "bot");
       return;
     }
@@ -2178,7 +2231,7 @@ loadTabs().then(loadData);
           : `(Mỗi video tối đa ${AI_COMMENTS_PER_VIDEO} bình luận nhiều like nhất.)`;
         thinkingEl.textContent = "Đang phân tích...";
 
-        messageForGemini = `Dưới đây là dữ liệu của đúng các video đang được hiển thị/lọc trên bảng lúc này (${list.length} video, theo bộ lọc/tìm kiếm hiện tại của người dùng trên app). Hãy dùng dữ liệu này để trả lời câu hỏi bên dưới nếu liên quan; nếu câu hỏi không liên quan tới dữ liệu, trả lời bình thường. Lưu ý về ngôn ngữ: đây là các kênh TIẾNG HÀN và TIẾNG NHẬT. Mỗi video đã được gắn ngôn ngữ gốc (cột KO = Tiếng Hàn, JA = Tiếng Nhật). Hãy đọc tiêu đề và bình luận của từng video theo ĐÚNG ngôn ngữ của video đó (Hán tự trong video JA đọc theo tiếng Nhật, không đọc như tiếng Trung; bình luận có thể bằng ngôn ngữ khác video, ví dụ tiếng Anh). Luôn trả lời bằng TIẾNG VIỆT; khi trích dẫn tiêu đề/bình luận, giữ nguyên văn gốc và kèm bản dịch Tiếng Việt trong ngoặc. Khi so sánh, tách riêng nhận xét cho nhóm Tiếng Hàn và nhóm Tiếng Nhật nếu có cả hai.
+        messageForGemini = `Dưới đây là dữ liệu của đúng các video đang được hiển thị/lọc trên bảng lúc này (${list.length} video, theo bộ lọc/tìm kiếm hiện tại của người dùng trên app). Hãy dùng dữ liệu này để trả lời câu hỏi bên dưới nếu liên quan; nếu câu hỏi không liên quan tới dữ liệu, trả lời bình thường. Lưu ý về ngôn ngữ: dữ liệu gồm các kênh TIẾNG HÀN, TIẾNG NHẬT và TIẾNG PHÁP (tuỳ bộ lọc, có thể chỉ có một phần). Mỗi video đã được gắn ngôn ngữ gốc ở cột ngôn ngữ: KO = Tiếng Hàn, JA = Tiếng Nhật, FR = Tiếng Pháp, mã khác = ngôn ngữ khác, ? = chưa xác định. Hãy đọc tiêu đề và bình luận của từng video theo ĐÚNG ngôn ngữ của video đó (Hán tự trong video JA đọc theo tiếng Nhật, không đọc như tiếng Trung; bình luận có thể bằng ngôn ngữ khác video, ví dụ tiếng Anh). Luôn trả lời bằng TIẾNG VIỆT; khi trích dẫn tiêu đề/bình luận, giữ nguyên văn gốc và kèm bản dịch Tiếng Việt trong ngoặc. Khi so sánh, tách riêng nhận xét cho từng nhóm ngôn ngữ có trong dữ liệu.
 
 Phân bố ngôn ngữ: ${langSummary || "(trống)"}
 
