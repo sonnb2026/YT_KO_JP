@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="description" content="Bảng thống kê hiệu suất video, kênh và bình luận YouTube (kênh Tiếng Hàn và Tiếng Nhật)." />
+<meta name="description" content="Bảng thống kê hiệu suất video, kênh và bình luận YouTube (kênh Tiếng Hàn, Tiếng Nhật và Tiếng Pháp)." />
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%230b1016'/%3E%3Ctext x='50' y='68' font-size='58' text-anchor='middle'%3E%E2%9C%88%EF%B8%8F%3C/text%3E%3C/svg%3E" />
 <title>Thống kê dữ liệu Youtube</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -29,8 +29,8 @@
     </span>
   </div>
   <div class="board-header__title">
-    <span class="board-header__eyebrow">GATE · 🇰🇷 KOREA · 🇯🇵 JAPAN</span>
-    <h1>Thống kê dữ liệu Youtube KR · JP</h1>
+    <span class="board-header__eyebrow">GATE · 🇰🇷 KOREA · 🇯🇵 JAPAN · 🇫🇷 FRANCE</span>
+    <h1>Thống kê dữ liệu Youtube KR · JP · FR</h1>
   </div>
   <div class="board-header__meta">
     <div class="meta-chip">
@@ -68,7 +68,7 @@
   <div class="controls">
     <div class="search-box">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-      <input type="text" id="searchInput" placeholder="Tìm theo tiêu đề (Hàn/Nhật) hoặc tên kênh..." />
+      <input type="text" id="searchInput" placeholder="Tìm theo tiêu đề (Hàn/Nhật/Pháp) hoặc tên kênh..." />
     </div>
 
     <div class="sort-box">
@@ -79,7 +79,6 @@
         <option value="viewsPerHour">View/giờ</option>
         <option value="subscriberCount">Sub kênh</option>
         <option value="duration">Thời lượng</option>
-        <option value="language">Ngôn ngữ</option>
         <option value="daysAgo">Lịch sử đăng</option>
         <option value="engagement">Tỷ lệ tương tác</option>
         <option value="channelGroup">Nhóm kênh</option>
@@ -297,7 +296,7 @@
       </span>
     </div>
     <div class="ai-chat-panel__input-row">
-      <input type="text" id="aiChatInput" placeholder="Khán giả Hàn và Nhật đang bình luận gì?" autocomplete="off" />
+      <input type="text" id="aiChatInput" placeholder="Khán giả đang bình luận gì nhiều nhất?" autocomplete="off" />
       <button id="aiChatSend" class="dir-btn dir-btn--small" title="Gửi">➤</button>
     </div>
   </div>
