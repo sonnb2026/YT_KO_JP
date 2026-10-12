@@ -1,4 +1,4 @@
-# Bảng theo dõi kênh YouTube Tiếng Hàn & Tiếng Nhật
+# Bảng theo dõi kênh YouTube Tiếng Hàn, Tiếng Nhật & Tiếng Pháp
 
 Web app tĩnh (deploy trên Vercel) để theo dõi thống kê của nhiều danh sách kênh
 YouTube theo tab: lượt xem, tốc độ tăng view (view/giờ), lượt thích, lượt bình luận,
@@ -27,9 +27,9 @@ chỉ đọc file JSON này — **không cần API key YouTube ở phía trình 
 ## 1. Cấu trúc project
 
 ```
-channels.json                 # danh sách kênh YouTube theo từng tab, vd { "Korea": [...], "Japan": [...] }
+channels.json                 # danh sách kênh YouTube theo từng tab, vd { "Korea": [...], "Japan": [...], "France": [...] }
 scripts/fetch-data.mjs        # script gọi YouTube API, chạy bởi GitHub Actions
-scripts/language.mjs          # nhận diện ngôn ngữ từng video (Hàn/Nhật), test: language.test.mjs
+scripts/language.mjs          # nhận diện ngôn ngữ từng video (Hàn/Nhật/Pháp), test: language.test.mjs
 .github/workflows/fetch-data.yml  # lịch chạy cron + workflow_dispatch (chạy tay)
 api/trigger-fetch.js          # nút "Fetch dữ liệu" trên web gọi vào đây để kích hoạt workflow trên
 api/manage-channels.js        # nút "Quản lý kênh" trên web gọi vào đây để tự sửa channels.json trên GitHub
@@ -116,9 +116,9 @@ Web cần 1 token GitHub để tự động: (a) kích hoạt fetch dữ liệu,
 
 ## 7. Thêm kênh/tab đầu tiên
 
-Bản này giao kèm sẵn 2 tab rỗng là `Korea` và `Japan`. Sau khi deploy xong, vào trang web →
-bấm **"Quản lý kênh"** → chọn tab → dán link/@handle kênh → "Thêm kênh". Một tab có thể chứa
-cả kênh Hàn lẫn kênh Nhật - ngôn ngữ được nhận diện theo từng video, không theo tab. Không cần vào GitHub, không cần sửa file gì cả — xem chi tiết mục 9.
+Bản này giao kèm sẵn 3 tab rỗng là `Korea`, `Japan` và `France`. Sau khi deploy xong, vào
+trang web → bấm **"Quản lý kênh"** → chọn tab → dán link/@handle kênh → "Thêm kênh". Một tab
+có thể chứa kênh nhiều ngôn ngữ - ngôn ngữ được nhận diện theo từng video, không theo tab. Không cần vào GitHub, không cần sửa file gì cả — xem chi tiết mục 9.
 
 Kênh **mới thêm lần đầu sẽ tự động được lấy TOÀN BỘ video** (không giới hạn ~50 video
 gần nhất) — không cần tích chọn gì thêm.
@@ -200,36 +200,47 @@ không cần service account, không tốn quota YouTube API. Có thể đặt l
 ngày ngay trong Google Apps Script.
 
 
-## 13. Bản Tiếng Hàn & Tiếng Nhật
+## 13. Bản Tiếng Hàn, Tiếng Nhật & Tiếng Pháp
 
 ### Ngôn ngữ được xác định theo TỪNG VIDEO
-Mỗi video được gắn trường `language` (`ko` = Tiếng Hàn, `ja` = Tiếng Nhật, mã khác, hoặc `und` =
-không xác định) khi fetch, theo thứ tự ưu tiên (`scripts/language.mjs`):
+Mỗi video được gắn trường `language` (`ko` = Tiếng Hàn, `ja` = Tiếng Nhật, `fr` = Tiếng Pháp,
+mã khác, hoặc `und` = không xác định) khi fetch, theo thứ tự ưu tiên (`scripts/language.mjs`):
 
-1. **Chữ viết trong tiêu đề** — có chữ Hangul → Hàn; có Hiragana/Katakana → Nhật. Đây là tín
-   hiệu chắc chắn nhất vì 2 bộ chữ này không dùng chung giữa 2 ngôn ngữ.
-2. **Chữ viết trong mô tả video** — khi tiêu đề chỉ có Hán tự (vd `京都紅葉`) hoặc chữ Latin.
+1. **Tiêu đề** — có chữ Hangul → Hàn; có Hiragana/Katakana → Nhật (2 bộ chữ này không dùng
+   chung nên rất chắc chắn). Chữ Latin có đủ dấu hiệu tiếng Pháp → Pháp (xem bên dưới).
+2. **Mô tả video** — cùng quy tắc, dùng khi tiêu đề chỉ có Hán tự (vd `京都紅葉`), chữ Latin
+   chung chung (vd `MARSEILLE 4K`) hoặc quá ngắn.
 3. **Ngôn ngữ chủ kênh khai báo** (`defaultAudioLanguage` / `defaultLanguage`) — chỉ tính là
-   chắc chắn khi là `ko`/`ja`. Nhiều kênh để nguyên giá trị mặc định `en` cho mọi video, nên
-   giá trị khác bị coi là tín hiệu yếu.
-4. **Ngôn ngữ chủ đạo của kênh** — đa số video của kênh, rồi tới ngôn ngữ/quốc gia (KR/JP) của
-   kênh.
+   chắc chắn khi là `ko`/`ja`/`fr`. Nhiều kênh để nguyên giá trị mặc định `en` cho mọi video,
+   nên giá trị khác bị coi là tín hiệu yếu.
+4. **Ngôn ngữ chủ đạo của kênh** — đa số video của kênh, rồi tới ngôn ngữ/quốc gia của kênh
+   (KR → Hàn, JP → Nhật, FR → Pháp; Bỉ/Thuỵ Sĩ/Canada không tính vì là nước đa ngôn ngữ).
 
-Rê chuột vào nhãn ngôn ngữ trong bảng để xem video được nhận diện theo cách nào.
+**Nhận diện tiếng Pháp.** Tiếng Pháp dùng chữ Latin nên không nhận diện bằng bộ chữ được. App
+cộng điểm theo các dấu hiệu đặc trưng: từ như *les, avec, dans, cette, très, nous, vous* (2
+điểm) hoặc *le, des, du, une, est, et, pour…* (1 điểm), dạng lược âm *l', d', qu', c'est,
+j'ai* (1 điểm), và chữ có dấu *ç œ è ê â î ô û ù* (tối đa 1 điểm). Đủ 2 điểm → Pháp. Văn bản có
+*ñ ¿ ¡ ã õ ì ò* (Tây Ban Nha / Bồ Đào Nha / Ý) không bao giờ bị tính là Pháp. Từ mượn lẻ trong
+tiêu đề tiếng Anh (*Café, Hôtel, Crème brûlée*) không đủ điểm.
 
 ### App đọc dữ liệu theo đúng ngôn ngữ đó
-- **Dịch tiêu đề** (rê chuột vào tiêu đề, và hiện sẵn dưới tiêu đề trong bảng bình luận): dịch
-  từ đúng ngôn ngữ của video sang Tiếng Việt (`sl=ko` hoặc `sl=ja`), không để Google đoán.
-  Điều này quan trọng với tiêu đề chỉ có Hán tự, vốn rất dễ bị nhận nhầm thành tiếng Trung.
-- **Dịch bình luận**: ưu tiên chữ viết của chính bình luận (khán giả có thể bình luận tiếng
-  Hàn dưới video Nhật hoặc ngược lại). Bình luận chỉ có Hán tự thì theo ngôn ngữ video. Bình
-  luận không có chữ Hàn/Nhật (vd tiếng Anh) thì để Google tự nhận diện.
-- **Trợ lý AI**: mỗi video gửi đi được gắn nhãn KO/JA, Gemini được yêu cầu đọc theo đúng ngôn
+- **Dịch tiêu đề** (rê chuột vào tiêu đề, và hiện sẵn dưới tiêu đề trong bảng bình luận):
+  video Hàn/Nhật luôn dịch từ đúng `ko`/`ja` — quan trọng với tiêu đề chỉ có Hán tự, vốn rất dễ
+  bị nhận nhầm thành tiếng Trung. Video Pháp dịch từ `fr` khi chính tiêu đề trông như tiếng
+  Pháp; tiêu đề tiếng Anh trong kênh Pháp thì để Google tự nhận diện.
+- **Dịch bình luận**: theo văn bản của chính bình luận (Hàn/Nhật/Pháp). Bình luận chỉ có Hán tự
+  thì theo ngôn ngữ video. Bình luận còn lại (tiếng Anh, quá ngắn, emoji) để Google tự nhận diện.
+- **Trợ lý AI**: mỗi video gửi đi được gắn nhãn KO/JA/FR, Gemini được yêu cầu đọc theo đúng ngôn
   ngữ của từng video, trả lời bằng Tiếng Việt, trích dẫn nguyên văn kèm bản dịch, và tách nhận
-  xét riêng cho nhóm Hàn và nhóm Nhật.
-- **Cột "Ngôn ngữ"** trong bảng (có trong ô Sắp xếp và trong file Excel), **chip lọc ngôn ngữ**
-  🇰🇷 / 🇯🇵 phía trên bảng, và tỷ lệ ngôn ngữ trong bảng thống kê kênh.
+  xét riêng cho từng nhóm ngôn ngữ.
+- Nhãn 🇰🇷 / 🇯🇵 / 🇫🇷 trong bảng bình luận (rê chuột để xem video được nhận diện theo cách nào)
+  và tỷ lệ ngôn ngữ trong bảng thống kê kênh. Bảng dữ liệu và file Excel không có cột ngôn ngữ.
 - Font Noto Sans KR / Noto Sans JP được nạp để chữ Hàn, Nhật hiển thị đúng nét.
+
+### Chip thời gian
+Dưới 2 ngày (0–2) · Dưới 10 ngày (0–9) · Từ 10 - 30 ngày (10–29) · 0 - 30 ngày (0–30, tính cả
+ngày 30) · Trên 30 ngày (từ 30). Số ngày là cột "Lịch sử đăng" (đăng hôm nay = 0). Các khoảng có
+thể chồng nhau nên 1 video có thể được đếm ở nhiều chip; chọn nhiều chip = hợp các khoảng.
 
 ### Các lỗi của bản gốc đã được sửa
 - Kênh bị dán trùng 2 lần (link `/channel/UC…` và `@handle` của cùng 1 kênh) chỉ được fetch 1
@@ -256,3 +267,4 @@ Rê chuột vào nhãn ngôn ngữ trong bảng để xem video được nhận 
   cũ không có bình luận mới sẽ hiện thông báo tương ứng. Đặt `COMMENT_MAX_AGE_DAYS: "0"` trong
   `.github/workflows/fetch-data.yml` để bỏ giới hạn (tốn quota hơn).
 - Các nút "Fetch dữ liệu" / "Quản lý kênh" vẫn **không có mật khẩu** như bản gốc.
+- Muốn thêm ngôn ngữ khác: xem hướng dẫn ở đầu `scripts/language.mjs`.
