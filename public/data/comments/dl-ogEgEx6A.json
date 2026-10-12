@@ -1,0 +1,37 @@
+{
+  "videoId": "dl-ogEgEx6A",
+  "language": "fr",
+  "maxAgeDays": 90,
+  "disabled": false,
+  "comments": [
+    {
+      "id": "UgyNsmRD0UK6sXhkJZx4AaABAg",
+      "author": "@MakeJhonson",
+      "authorImage": "https://yt3.ggpht.com/5H8LYQG9WixuKu5PdeCnUgilhmP19uM8iBxUB-VePdukGlo-tQ_0TEwtNskFqowSKaIq57QiY6o=s48-c-k-c0x00ffffff-no-rj",
+      "text": "Madagascar ♥",
+      "likeCount": 0,
+      "publishedAt": "2026-08-17T07:53:41Z",
+      "replyCount": 0,
+      "replies": []
+    },
+    {
+      "id": "UgxMqk5J5Fk1ALPHnWV4AaABAg",
+      "author": "@MaachouDelhoum-s7v8q",
+      "authorImage": "https://yt3.ggpht.com/ytc/AIdro_k0PVo4Ayjzf9FlRcdjZAQYBwK430_hLvWlP9jgikQjC65W-ONDWjkk4dykteuHJ96HgQ=s48-c-k-c0x00ffffff-no-rj",
+      "text": "Algérie",
+      "likeCount": 0,
+      "publishedAt": "2026-08-16T17:30:37Z",
+      "replyCount": 1,
+      "replies": [
+        {
+          "id": "UgxMqk5J5Fk1ALPHnWV4AaABAg.A__W72ddD8RA_bEp3my7BE",
+          "author": "@VSWorld-z1o",
+          "authorImage": "https://yt3.ggpht.com/NnniacSTR_JlbsFzTJzGokNBu3IyY-pLkKFcxWtykdBqixUZ2QdZgroNiqMuvCx1MwwYX6ar=s48-c-k-c0x00ffffff-no-rj",
+          "text": "Peut-être un futur sujet de documentaire, qui sait ?",
+          "likeCount": 0,
+          "publishedAt": "2026-08-17T09:37:57Z"
+        }
+      ]
+    }
+  ]
+}
