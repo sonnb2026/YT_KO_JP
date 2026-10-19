@@ -3,5 +3,26 @@
   "language": "fr",
   "maxAgeDays": 90,
   "disabled": false,
-  "comments": []
+  "comments": [
+    {
+      "id": "UgzoicGuEF-yOwgl1it4AaABAg",
+      "author": "@piliauze",
+      "authorImage": "https://yt3.ggpht.com/ytc/AIdro_nTwmneCrxRo-KNQUuA0NjuRsm-6KAqAwAzrYnacd7bfEU=s48-c-k-c0x00ffffff-no-rj",
+      "text": "Je dis pas que la vidéo est movaise mais le titre me blaisse le coeur",
+      "likeCount": 0,
+      "publishedAt": "2026-10-18T23:47:41Z",
+      "replyCount": 0,
+      "replies": []
+    },
+    {
+      "id": "UgyysyivvSzo6HNq5xd4AaABAg",
+      "author": "@piliauze",
+      "authorImage": "https://yt3.ggpht.com/ytc/AIdro_nTwmneCrxRo-KNQUuA0NjuRsm-6KAqAwAzrYnacd7bfEU=s48-c-k-c0x00ffffff-no-rj",
+      "text": "Bientôt 1 moi à malte, nombre de relation au compteur: 0\nEt pourtant c'est pas comme si j'évitais hein...",
+      "likeCount": 0,
+      "publishedAt": "2026-10-18T23:45:38Z",
+      "replyCount": 0,
+      "replies": []
+    }
+  ]
 }

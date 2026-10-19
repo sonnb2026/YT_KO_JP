@@ -3,5 +3,26 @@
   "language": "ja",
   "maxAgeDays": 90,
   "disabled": false,
-  "comments": []
+  "comments": [
+    {
+      "id": "UgyNY3Ic3v4rT0_3V3V4AaABAg",
+      "author": "@山根靖",
+      "authorImage": "https://yt3.ggpht.com/neXthc67NyW3v5Yr4KkPy0UmdlaFJKhrGc7ioo8GzbkzRJRVS0Q8ca_-6THNrZW3aWuj4b9fNe4=s48-c-k-c0x00ffffff-no-rj",
+      "text": "行きたくありません！ 7:02 7:16",
+      "likeCount": 0,
+      "publishedAt": "2026-10-18T21:27:30Z",
+      "replyCount": 0,
+      "replies": []
+    },
+    {
+      "id": "UgzH2Kd7rVfTbppUjt94AaABAg",
+      "author": "@山根靖",
+      "authorImage": "https://yt3.ggpht.com/neXthc67NyW3v5Yr4KkPy0UmdlaFJKhrGc7ioo8GzbkzRJRVS0Q8ca_-6THNrZW3aWuj4b9fNe4=s48-c-k-c0x00ffffff-no-rj",
+      "text": "行きたくありません！",
+      "likeCount": 0,
+      "publishedAt": "2026-10-18T21:27:02Z",
+      "replyCount": 0,
+      "replies": []
+    }
+  ]
 }
