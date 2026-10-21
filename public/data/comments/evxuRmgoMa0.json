@@ -3,5 +3,25 @@
   "language": "ko",
   "maxAgeDays": 90,
   "disabled": false,
-  "comments": []
+  "comments": [
+    {
+      "id": "Ugw7fdMdTjYEWXcEc-p4AaABAg",
+      "author": "@humanwe3677",
+      "authorImage": "https://yt3.ggpht.com/ytc/AIdro_mOhu3btvIAerOCcVRaXcDdwA7N4_FhpMtACIjfXXI=s48-c-k-c0x00ffffff-no-rj",
+      "text": "자카르타에서 유명한 호텔",
+      "likeCount": 0,
+      "publishedAt": "2026-10-20T05:20:05Z",
+      "replyCount": 1,
+      "replies": [
+        {
+          "id": "Ugw7fdMdTjYEWXcEc-p4AaABAg.AcA_BKMUoJ1AcA_Fag6maW",
+          "author": "@humanwe3677",
+          "authorImage": "https://yt3.ggpht.com/ytc/AIdro_mOhu3btvIAerOCcVRaXcDdwA7N4_FhpMtACIjfXXI=s48-c-k-c0x00ffffff-no-rj",
+          "text": "ㅇㅣ름",
+          "likeCount": 0,
+          "publishedAt": "2026-10-20T05:20:40Z"
+        }
+      ]
+    }
+  ]
 }

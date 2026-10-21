@@ -5,14 +5,33 @@
   "disabled": false,
   "comments": [
     {
+      "id": "UgxRDtpS8LfoHyIhRnx4AaABAg",
+      "author": "@DiscovertheTruth-fa",
+      "authorImage": "https://yt3.ggpht.com/f2K5pOu24aKCsfwQkdQ5AmoRP8DfBM0f_gV8PzTiadKf9F2uAEMabn_fk6G9heL107EanDkTQTw=s48-c-k-c0x00ffffff-no-rj",
+      "text": "Ce qui m’a le plus marqué en Norvège, c’est le calme et le respect des gens. Par contre, se faire de vrais amis prend beaucoup de temps. Est-ce que d’autres ont vécu la même chose ?",
+      "likeCount": 1,
+      "publishedAt": "2026-10-20T01:58:09Z",
+      "replyCount": 0,
+      "replies": []
+    },
+    {
       "id": "Ugx5p8Fs-bEGd9R3PYN4AaABAg",
       "author": "@Pierre-d1r7m",
       "authorImage": "https://yt3.ggpht.com/ytc/AIdro_kvbtTnSib7sZ8unyXGBaXdCu1QEHUOmM0J_vmGOMefsdIjo3XP0JRi_xplBMKba99Xow=s48-c-k-c0x00ffffff-no-rj",
       "text": "Depuis Lavras au Brésil",
       "likeCount": 1,
       "publishedAt": "2026-10-20T01:07:36Z",
-      "replyCount": 0,
-      "replies": []
+      "replyCount": 1,
+      "replies": [
+        {
+          "id": "Ugx5p8Fs-bEGd9R3PYN4AaABAg.AcA7I8e5UpQAcB7tPnGpIb",
+          "author": "@viesdailleurs",
+          "authorImage": "https://yt3.ggpht.com/cSZ8MzaJPHF0o1OisIBx7HUf_qO28fDqit6pJqBMTeG04j4EP33ZlgOXS01Fpqd1EO087CfRPg=s48-c-k-c0x00ffffff-no-rj",
+          "text": "Merci beaucoup de nous suivre depuis le Brésil ! 😊",
+          "likeCount": 0,
+          "publishedAt": "2026-10-20T10:32:04Z"
+        }
+      ]
     }
   ]
 }
