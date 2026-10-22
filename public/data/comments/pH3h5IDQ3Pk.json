@@ -3,5 +3,25 @@
   "language": "ja",
   "maxAgeDays": 90,
   "disabled": false,
-  "comments": []
+  "comments": [
+    {
+      "id": "Ugw0nqT95a1pLsv11AB4AaABAg",
+      "author": "@chikyu-kurashi",
+      "authorImage": "https://yt3.ggpht.com/FvUxD-qrFiCwmj5rimoH0915RY9OquVrtA5Se4BVZlxhEXec3Pqh5Z4bbHA3HNAy2MmPHpOnavE=s48-c-k-c0x00ffffff-no-rj",
+      "text": "映像が本当に美しくて、最後まで見入ってしまいました。アフガニスタンの知られざる魅力を伝えてくれてありがとうございます！",
+      "likeCount": 1,
+      "publishedAt": "2026-10-21T02:24:30Z",
+      "replyCount": 1,
+      "replies": [
+        {
+          "id": "Ugw0nqT95a1pLsv11AB4AaABAg.AcCptCPOaUPAcCpyeP5JDj",
+          "author": "@chikyu-kurashi",
+          "authorImage": "https://yt3.ggpht.com/FvUxD-qrFiCwmj5rimoH0915RY9OquVrtA5Se4BVZlxhEXec3Pqh5Z4bbHA3HNAy2MmPHpOnavE=s48-c-k-c0x00ffffff-no-rj",
+          "text": "わかります！挨拶ひとつで距離がぐっと縮まりますよね。実際に住まれていた方の言葉だと、より説得力があります。ありがとうございます！",
+          "likeCount": 0,
+          "publishedAt": "2026-10-21T02:25:14Z"
+        }
+      ]
+    }
+  ]
 }
