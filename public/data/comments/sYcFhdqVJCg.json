@@ -2,6 +2,17 @@
   "videoId": "sYcFhdqVJCg",
   "language": "fr",
   "maxAgeDays": 90,
-  "disabled": true,
-  "comments": []
+  "disabled": false,
+  "comments": [
+    {
+      "id": "Ugw5Ynxc6DzJrq8vcEV4AaABAg",
+      "author": "@MamaneOusmane-g5e6b",
+      "authorImage": "https://yt3.ggpht.com/ytc/AIdro_m5DHdJOQs40hzoitGNZg5x-fmV6OYmJoszNAslGR0idT_rVnRjRUDprHsTC8XFm7CrIA=s48-c-k-c0x00ffffff-no-rj",
+      "text": "J'aime découvrir l'Iran, j'aime y séjourner mais cette restriction de liberté et la précarité de la vie me font peur. Aussi, le siguee est il permis par l'islam ?",
+      "likeCount": 0,
+      "publishedAt": "2026-10-22T21:24:56Z",
+      "replyCount": 0,
+      "replies": []
+    }
+  ]
 }
