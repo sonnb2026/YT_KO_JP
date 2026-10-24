@@ -1,14 +1,14 @@
 {
   "list": "Japan",
-  "lastUpdated": "2026-10-23T01:08:07.586Z",
+  "lastUpdated": "2026-10-24T01:18:53.459Z",
   "channelCount": 8,
   "channelLinesConfigured": 8,
-  "videoCount": 676,
+  "videoCount": 680,
   "languageCounts": {
-    "ja": 675,
+    "ja": 679,
     "fr": 1
   },
-  "quotaUnitsUsed": 58,
+  "quotaUnitsUsed": 45,
   "apiKeysConfigured": 2,
   "vph": {
     "minIntervalHours": 6,
@@ -18,6 +18,11 @@
   },
   "liveCount": 1,
   "allKeysExhausted": false,
-  "errors": [],
+  "errors": [
+    {
+      "channel": "https://www.youtube.com/@%E4%B8%96%E7%95%8C%E3%81%AE%E5%86%92%E9%99%BA%E5%AE%B6-f9z/videos",
+      "error": "playlistItems failed: playlistNotFound"
+    }
+  ],
   "replyErrors": []
 }
