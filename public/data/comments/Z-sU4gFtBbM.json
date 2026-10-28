@@ -3,5 +3,16 @@
   "language": "fr",
   "maxAgeDays": 90,
   "disabled": false,
-  "comments": []
+  "comments": [
+    {
+      "id": "Ugx4iNwymMZblMR9HE14AaABAg",
+      "author": "@wouchistephane3338",
+      "authorImage": "https://yt3.ggpht.com/ytc/AIdro_kuRFLlldP7fg6buuhhQLda7bkiwxdaSpbBNUbN7MGwGhY=s48-c-k-c0x00ffffff-no-rj",
+      "text": "du Gabon en Afrique central",
+      "likeCount": 0,
+      "publishedAt": "2026-10-27T11:54:06Z",
+      "replyCount": 0,
+      "replies": []
+    }
+  ]
 }
