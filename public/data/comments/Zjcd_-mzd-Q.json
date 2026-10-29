@@ -171,14 +171,22 @@
       "text": "여기가 미국 샌프란시스코 입니다 \n잘봤어요 감사해요",
       "likeCount": 1,
       "publishedAt": "2026-10-27T04:19:21Z",
-      "replyCount": 1,
+      "replyCount": 2,
       "replies": [
+        {
+          "id": "UgxC4cNwzNi6ah8KF7x4AaABAg.AcSUnhxexr5AcXGWRn-qQO",
+          "author": "@BooSim-v5s",
+          "authorImage": "https://yt3.ggpht.com/ytc/AIdro_m2g__-AwGH6u1SreUmeLJsbDUdg8YZ10Q5tzJdqWSe_Y4L-l6LGvHa66Ro1s_bmfGeFw=s48-c-k-c0x00ffffff-no-rj",
+          "text": "​@SDTQDISCOVERYKR감사합니다",
+          "likeCount": 0,
+          "publishedAt": "2026-10-29T00:50:44Z"
+        },
         {
           "id": "UgxC4cNwzNi6ah8KF7x4AaABAg.AcSUnhxexr5AcS_xDdV58J",
           "author": "@SDTQDISCOVERYKR",
           "authorImage": "https://yt3.ggpht.com/XG8OcmTCcHAGWTzJE_jZzkTcicNUWzF9NDhlPiu-3JBXYmQkFcuoLARaiJ75ptOpH5cumtNC-g=s48-c-k-c0x00ffffff-no-rj",
           "text": "멀리 샌프란시스코에서 시청해 주셔서 정말 감사합니다! 앞으로도 흥미롭고 유익한 영상으로 찾아뵐게요. 좋은 하루 보내세요!",
-          "likeCount": 0,
+          "likeCount": 1,
           "publishedAt": "2026-10-27T05:13:05Z"
         }
       ]

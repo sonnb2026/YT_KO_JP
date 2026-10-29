@@ -5,14 +5,33 @@
   "disabled": false,
   "comments": [
     {
+      "id": "Ugwj5_dXGonxcxMcUwF4AaABAg",
+      "author": "@parentchr",
+      "authorImage": "https://yt3.ggpht.com/ytc/AIdro_k43oNuCje_JHsaEE3QLjdttG5bCq7hGunTXacJrpfVag6A=s48-c-k-c0x00ffffff-no-rj",
+      "text": "En Belgique.😊",
+      "likeCount": 0,
+      "publishedAt": "2026-10-28T11:52:45Z",
+      "replyCount": 0,
+      "replies": []
+    },
+    {
       "id": "Ugx4iNwymMZblMR9HE14AaABAg",
       "author": "@wouchistephane3338",
       "authorImage": "https://yt3.ggpht.com/ytc/AIdro_kuRFLlldP7fg6buuhhQLda7bkiwxdaSpbBNUbN7MGwGhY=s48-c-k-c0x00ffffff-no-rj",
       "text": "du Gabon en Afrique central",
       "likeCount": 0,
       "publishedAt": "2026-10-27T11:54:06Z",
-      "replyCount": 0,
-      "replies": []
+      "replyCount": 1,
+      "replies": [
+        {
+          "id": "Ugx4iNwymMZblMR9HE14AaABAg.AcTIqP2lkvZAcVovFYBcSp",
+          "author": "@viesdailleurs",
+          "authorImage": "https://yt3.ggpht.com/cSZ8MzaJPHF0o1OisIBx7HUf_qO28fDqit6pJqBMTeG04j4EP33ZlgOXS01Fpqd1EO087CfRPg=s48-c-k-c0x00ffffff-no-rj",
+          "text": "Merci beaucoup de nous suivre depuis le Gabon ! 😊",
+          "likeCount": 0,
+          "publishedAt": "2026-10-28T11:21:36Z"
+        }
+      ]
     }
   ]
 }
