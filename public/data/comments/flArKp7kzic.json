@@ -2,6 +2,17 @@
   "videoId": "flArKp7kzic",
   "language": "fr",
   "maxAgeDays": 90,
-  "disabled": true,
-  "comments": []
+  "disabled": false,
+  "comments": [
+    {
+      "id": "UgxIzoC-e18KBf00BjB4AaABAg",
+      "author": "@salaheddinebenbahmed7216",
+      "authorImage": "https://yt3.ggpht.com/0AomIbe5MmHWVwDo3icZUSLTL41v5NVNOFu-_pVKClwSEMF5EkMHPygpcXGFWLMgs1lU4fALpg=s48-c-k-c0x00ffffff-no-rj",
+      "text": "C’est de l’ordre pression patriarcale",
+      "likeCount": 1,
+      "publishedAt": "2026-10-30T23:39:58Z",
+      "replyCount": 0,
+      "replies": []
+    }
+  ]
 }

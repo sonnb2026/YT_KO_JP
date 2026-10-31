@@ -2,6 +2,27 @@
   "videoId": "aLU27NNRyQA",
   "language": "fr",
   "maxAgeDays": 90,
-  "disabled": true,
-  "comments": []
+  "disabled": false,
+  "comments": [
+    {
+      "id": "UgzrKE1nAXOt5KoK_u14AaABAg",
+      "author": "@jeanCharles-q4p",
+      "authorImage": "https://yt3.ggpht.com/ytc/AIdro_mamrztXZqZmBmTAL8rzsT4pWEYa-fktAb83AjkUfWpehOPFLb2TzVWL2ITuPij5KvSkQ=s48-c-k-c0x00ffffff-no-rj",
+      "text": "excellent reportage 😸😝",
+      "likeCount": 0,
+      "publishedAt": "2026-10-30T20:35:36Z",
+      "replyCount": 0,
+      "replies": []
+    },
+    {
+      "id": "Ugyk2AE_luDRGXdSSTV4AaABAg",
+      "author": "@MadouCoulou-n1r",
+      "authorImage": "https://yt3.ggpht.com/ytc/AIdro_kIQd925lZn3kNvSQBuSIvxotU3QPyWJUGr6nl8J4Bbkl1bcFpzgHabStJf-LedxUFwQA=s48-c-k-c0x00ffffff-no-rj",
+      "text": "👁️👁️👍🇧🇴🇧🇴🇧🇴🇧🇴🇧🇴🇧🇴🇧🇴🇧🇴🇧🇴🇧🇴❤️",
+      "likeCount": 0,
+      "publishedAt": "2026-10-30T13:30:31Z",
+      "replyCount": 0,
+      "replies": []
+    }
+  ]
 }
