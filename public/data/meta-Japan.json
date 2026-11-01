@@ -1,14 +1,14 @@
 {
   "list": "Japan",
-  "lastUpdated": "2026-10-31T01:57:13.391Z",
+  "lastUpdated": "2026-11-01T01:46:09.457Z",
   "channelCount": 8,
   "channelLinesConfigured": 8,
-  "videoCount": 716,
+  "videoCount": 721,
   "languageCounts": {
-    "ja": 715,
+    "ja": 720,
     "fr": 1
   },
-  "quotaUnitsUsed": 72,
+  "quotaUnitsUsed": 81,
   "apiKeysConfigured": 2,
   "vph": {
     "minIntervalHours": 6,

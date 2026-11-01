@@ -1,13 +1,13 @@
 {
   "list": "France",
-  "lastUpdated": "2026-10-31T01:57:38.795Z",
+  "lastUpdated": "2026-11-01T01:46:32.097Z",
   "channelCount": 7,
   "channelLinesConfigured": 7,
-  "videoCount": 768,
+  "videoCount": 773,
   "languageCounts": {
-    "fr": 768
+    "fr": 773
   },
-  "quotaUnitsUsed": 189,
+  "quotaUnitsUsed": 183,
   "apiKeysConfigured": 2,
   "vph": {
     "minIntervalHours": 6,
