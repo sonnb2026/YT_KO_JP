@@ -2,6 +2,27 @@
   "videoId": "4lVI3dcPDZ8",
   "language": "fr",
   "maxAgeDays": 90,
-  "disabled": true,
-  "comments": []
+  "disabled": false,
+  "comments": [
+    {
+      "id": "UgxXXb8p6msRCgT6VQd4AaABAg",
+      "author": "@HAKIZIMANAEmmanuel-b5v",
+      "authorImage": "https://yt3.ggpht.com/ytc/AIdro_n633UFGUpzCi4f3OVmAh6fby2HThAFHI-Olta-aZZjGlnkhUpi1wPGG1-YFqg2vnKy2g=s48-c-k-c0x00ffffff-no-rj",
+      "text": "Question comment dites-vous que la Mongolie est le pays le moins peuplé du monde alos qu'il est connu que Le Vatican est le moins peuplé du monde?",
+      "likeCount": 0,
+      "publishedAt": "2026-11-03T15:41:11Z",
+      "replyCount": 0,
+      "replies": []
+    },
+    {
+      "id": "UgwTeuMAZEuf5r_g-ZN4AaABAg",
+      "author": "@HAKIZIMANAEmmanuel-b5v",
+      "authorImage": "https://yt3.ggpht.com/ytc/AIdro_n633UFGUpzCi4f3OVmAh6fby2HThAFHI-Olta-aZZjGlnkhUpi1wPGG1-YFqg2vnKy2g=s48-c-k-c0x00ffffff-no-rj",
+      "text": "Je vous regarde et entends du District de KIREHE au RWANDA",
+      "likeCount": 0,
+      "publishedAt": "2026-11-03T15:38:22Z",
+      "replyCount": 0,
+      "replies": []
+    }
+  ]
 }
