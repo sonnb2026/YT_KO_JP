@@ -3,5 +3,16 @@
   "language": "fr",
   "maxAgeDays": 90,
   "disabled": false,
-  "comments": []
+  "comments": [
+    {
+      "id": "UgxmI3Cb0jzSI2kb80R4AaABAg",
+      "author": "@parsifal13.",
+      "authorImage": "https://yt3.ggpht.com/ytc/AIdro_nSZZDs8DDf3JRle_Dy9gyS6KQN3E3o2jjc6fMd5XTf_mA=s48-c-k-c0x00ffffff-no-rj",
+      "text": "Tres joli pays",
+      "likeCount": 0,
+      "publishedAt": "2026-11-05T12:13:29Z",
+      "replyCount": 0,
+      "replies": []
+    }
+  ]
 }
