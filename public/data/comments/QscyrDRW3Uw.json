@@ -2,6 +2,37 @@
   "videoId": "QscyrDRW3Uw",
   "language": "fr",
   "maxAgeDays": 90,
-  "disabled": true,
-  "comments": []
+  "disabled": false,
+  "comments": [
+    {
+      "id": "Ugw2ZACC76hbTGvGDNl4AaABAg",
+      "author": "@LuckyrbackLunda",
+      "authorImage": "https://yt3.ggpht.com/ytc/AIdro_mMCFGLpx-oVhpUD-5nWuGkQGaSnhc77pZDhv7mEa7cxk6UAAgzralettYUi9Lid9Cr3w=s48-c-k-c0x00ffffff-no-rj",
+      "text": "Bonjour Madame",
+      "likeCount": 0,
+      "publishedAt": "2026-11-06T21:25:51Z",
+      "replyCount": 0,
+      "replies": []
+    },
+    {
+      "id": "UgxNQB0K5MvK9Ks5DjV4AaABAg",
+      "author": "@LuckyrbackLunda",
+      "authorImage": "https://yt3.ggpht.com/ytc/AIdro_mMCFGLpx-oVhpUD-5nWuGkQGaSnhc77pZDhv7mEa7cxk6UAAgzralettYUi9Lid9Cr3w=s48-c-k-c0x00ffffff-no-rj",
+      "text": "❤",
+      "likeCount": 0,
+      "publishedAt": "2026-11-06T21:25:12Z",
+      "replyCount": 0,
+      "replies": []
+    },
+    {
+      "id": "Ugz6ODVDsgbAqOXaNl14AaABAg",
+      "author": "@ALFREDcrepinYakouzou-l9c",
+      "authorImage": "https://yt3.ggpht.com/ytc/AIdro_mIq3VHfPUrGhS9seKsJqeGzc2vC6doz0-nM2OENLkRxafGhMnaFzOjB0stCwcIPBngbw=s48-c-k-c0x00ffffff-no-rj",
+      "text": "Un moment inoubliable de la vie et j'adore",
+      "likeCount": 0,
+      "publishedAt": "2026-11-06T20:18:41Z",
+      "replyCount": 0,
+      "replies": []
+    }
+  ]
 }
