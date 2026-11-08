@@ -3,5 +3,26 @@
   "language": "fr",
   "maxAgeDays": 90,
   "disabled": false,
-  "comments": []
+  "comments": [
+    {
+      "id": "Ugy5X6r6dIkIvuk1tOV4AaABAg",
+      "author": "@AmadouKadidja-z5b",
+      "authorImage": "https://yt3.ggpht.com/ytc/AIdro_lImVEFshLCzwKPwsKil_wI44W3fLO5VgHisdM_-Jtm5ZMsPSMXFTRot9-tSU3zW38Ftw=s48-c-k-c0x00ffffff-no-rj",
+      "text": "MERCI ❤",
+      "likeCount": 0,
+      "publishedAt": "2026-11-07T21:59:17Z",
+      "replyCount": 0,
+      "replies": []
+    },
+    {
+      "id": "UgyTT0V6AsagLIrdVMZ4AaABAg",
+      "author": "@AmadouKadidja-z5b",
+      "authorImage": "https://yt3.ggpht.com/ytc/AIdro_lImVEFshLCzwKPwsKil_wI44W3fLO5VgHisdM_-Jtm5ZMsPSMXFTRot9-tSU3zW38Ftw=s48-c-k-c0x00ffffff-no-rj",
+      "text": "1",
+      "likeCount": 0,
+      "publishedAt": "2026-11-07T21:58:33Z",
+      "replyCount": 0,
+      "replies": []
+    }
+  ]
 }

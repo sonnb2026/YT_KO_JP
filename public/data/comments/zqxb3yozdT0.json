@@ -3,5 +3,25 @@
   "language": "fr",
   "maxAgeDays": 90,
   "disabled": false,
-  "comments": []
+  "comments": [
+    {
+      "id": "UgxXO2LwHMrv0_sjAL94AaABAg",
+      "author": "@mykyaubert",
+      "authorImage": "https://yt3.ggpht.com/ytc/AIdro_mMcxhuGZBFMfRBQDFYazvDM6I0Ju2hqDIjH_YkRWMkN6eYOqFo_cRHdbgwLkdaiRnKLA=s48-c-k-c0x00ffffff-no-rj",
+      "text": "C'est très bien comme système pour les criminels, à condition de ne pas emprisonner à tort les innocents.",
+      "likeCount": 1,
+      "publishedAt": "2026-11-07T10:00:22Z",
+      "replyCount": 1,
+      "replies": [
+        {
+          "id": "UgxXO2LwHMrv0_sjAL94AaABAg.AcuQ_0z-0e_AcuUulMVcXF",
+          "author": "@NOMMAD-n6y",
+          "authorImage": "https://yt3.ggpht.com/mAr537Wlhw2dnKVkfARaw6FlerioLIVWIgrlOZIFGc46B7fatkpCICRTuLfr0zV28VzLoAdNOg=s48-c-k-c0x00ffffff-no-rj",
+          "text": "Évidemment ! Cependant, il y a quand même des dommages collatéraux. Certains innocents sont en prison surtout à cause de leur apparence.",
+          "likeCount": 0,
+          "publishedAt": "2026-11-07T10:38:18Z"
+        }
+      ]
+    }
+  ]
 }
