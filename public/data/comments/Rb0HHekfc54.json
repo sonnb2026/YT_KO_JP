@@ -3,5 +3,35 @@
   "language": "fr",
   "maxAgeDays": 90,
   "disabled": false,
-  "comments": []
+  "comments": [
+    {
+      "id": "UgzBzqLXLuV3PMmoSiR4AaABAg",
+      "author": "@I.love.Thailand",
+      "authorImage": "https://yt3.ggpht.com/ytc/AIdro_mLEChNwe_lx5IJHHpTTyeQDZF6dqNzqdv0qIYwxwOIZFEIqKZ4yJI21xrQfhWDIZaP-Q=s48-c-k-c0x00ffffff-no-rj",
+      "text": "Horrible voix à la narration. A croire que le triste individu à l'origine de cette vidéo n'a pas un ami français capable d'enregistrer une bonne narration. Courage fuyons cet apprenti sorcier",
+      "likeCount": 0,
+      "publishedAt": "2026-11-10T01:50:28Z",
+      "replyCount": 0,
+      "replies": []
+    },
+    {
+      "id": "UgzZK4gFd8IH15mh66J4AaABAg",
+      "author": "@lecoqjeannot3358",
+      "authorImage": "https://yt3.ggpht.com/ytc/AIdro_kfhah0XiPVGo2su7uLHp7akJrRZ0hch3hMg4dg1AM=s48-c-k-c0x00ffffff-no-rj",
+      "text": "Impossible de vivre DECEMMENT en Asie pour 350 €.\nJ'ai 30 ans d'Asie.\nArreter de déblaterer n'importe quoi !",
+      "likeCount": 3,
+      "publishedAt": "2026-11-09T08:52:49Z",
+      "replyCount": 1,
+      "replies": [
+        {
+          "id": "UgzZK4gFd8IH15mh66J4AaABAg.AczSR2ZtSUiAczqWcDSAXc",
+          "author": "@gilleslefilou6277",
+          "authorImage": "https://yt3.ggpht.com/ytc/AIdro_mimC9VbaEtPyRCUL55_Vduus-POLQbK2d7hopubLvgA-UFiK0RjYIlhwdeLV7yKNeYJA=s48-c-k-c0x00ffffff-no-rj",
+          "text": "Au Bangladesh ?",
+          "likeCount": 0,
+          "publishedAt": "2026-11-09T12:32:02Z"
+        }
+      ]
+    }
+  ]
 }
