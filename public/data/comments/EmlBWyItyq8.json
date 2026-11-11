@@ -11,8 +11,17 @@
       "text": "C'est une ville qui est venue vite et qui cessera d'exister plus vite.",
       "likeCount": 0,
       "publishedAt": "2026-11-09T19:20:28Z",
-      "replyCount": 0,
-      "replies": []
+      "replyCount": 1,
+      "replies": [
+        {
+          "id": "UgyqylDps3WdTrFbUiR4AaABAg.Ad-_G1sXKroAd18JWZSOy8",
+          "author": "@viesdailleurs",
+          "authorImage": "https://yt3.ggpht.com/cSZ8MzaJPHF0o1OisIBx7HUf_qO28fDqit6pJqBMTeG04j4EP33ZlgOXS01Fpqd1EO087CfRPg=s48-c-k-c0x00ffffff-no-rj",
+          "text": "Pourquoi dites-vous cela ?",
+          "likeCount": 0,
+          "publishedAt": "2026-11-10T09:54:45Z"
+        }
+      ]
     }
   ]
 }
