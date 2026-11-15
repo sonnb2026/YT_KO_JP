@@ -3,5 +3,26 @@
   "language": "fr",
   "maxAgeDays": 90,
   "disabled": false,
-  "comments": []
+  "comments": [
+    {
+      "id": "UgwKtcCi4siTjzSbimp4AaABAg",
+      "author": "@Ruganzuedouard",
+      "authorImage": "https://yt3.ggpht.com/ytc/AIdro_ktgf3psRkAgKqgtBrHqhFCpTwn8CtlBGMPzkRqQ28gVAm_OArHXAgXv_ztPUnBWg1sIA=s48-c-k-c0x00ffffff-no-rj",
+      "text": "Comment je peut y ,aller visite,?",
+      "likeCount": 0,
+      "publishedAt": "2026-11-14T06:17:25Z",
+      "replyCount": 0,
+      "replies": []
+    },
+    {
+      "id": "UgwenDWp_SpDb6QntpV4AaABAg",
+      "author": "@Ruganzuedouard",
+      "authorImage": "https://yt3.ggpht.com/ytc/AIdro_ktgf3psRkAgKqgtBrHqhFCpTwn8CtlBGMPzkRqQ28gVAm_OArHXAgXv_ztPUnBWg1sIA=s48-c-k-c0x00ffffff-no-rj",
+      "text": "❤ vrement c,est bon pays",
+      "likeCount": 0,
+      "publishedAt": "2026-11-14T06:15:15Z",
+      "replyCount": 0,
+      "replies": []
+    }
+  ]
 }

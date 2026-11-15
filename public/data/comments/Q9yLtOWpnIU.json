@@ -11,8 +11,17 @@
       "text": "Mon pays c'est Cameroun",
       "likeCount": 1,
       "publishedAt": "2026-11-13T17:27:13Z",
-      "replyCount": 0,
-      "replies": []
+      "replyCount": 1,
+      "replies": [
+        {
+          "id": "UgzkMlriDkLsdKxkgM14AaABAg.Ad9fU4J0h8LAdBXQ1oGIVg",
+          "author": "@VSWorld-z1o",
+          "authorImage": "https://yt3.ggpht.com/NnniacSTR_JlbsFzTJzGokNBu3IyY-pLkKFcxWtykdBqixUZ2QdZgroNiqMuvCx1MwwYX6ar=s48-c-k-c0x00ffffff-no-rj",
+          "text": "C'est un magnifique pays avec une richesse culturelle incroyable !",
+          "likeCount": 0,
+          "publishedAt": "2026-11-14T10:46:30Z"
+        }
+      ]
     }
   ]
 }
