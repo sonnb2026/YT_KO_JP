@@ -3,5 +3,16 @@
   "language": "fr",
   "maxAgeDays": 90,
   "disabled": false,
-  "comments": []
+  "comments": [
+    {
+      "id": "UgzKad57Pft8k5VKMeV4AaABAg",
+      "author": "@FranckVarnier-l9v",
+      "authorImage": "https://yt3.ggpht.com/ytc/AIdro_nwfT50htsthWKbQG8XZyTVXCJKIY_cr3d_ec0f87HyoTEKTHQKJHAeBtG6dhmYybmTcg=s48-c-k-c0x00ffffff-no-rj",
+      "text": "Je pense que c’est très bien !",
+      "likeCount": 0,
+      "publishedAt": "2026-11-16T19:15:46Z",
+      "replyCount": 0,
+      "replies": []
+    }
+  ]
 }
