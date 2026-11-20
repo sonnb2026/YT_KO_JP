@@ -1,6 +1,6 @@
 {
   "list": "Korea",
-  "lastUpdated": "2026-11-19T03:56:24.908Z",
+  "lastUpdated": "2026-11-20T03:49:43.178Z",
   "channelCount": 10,
   "channelLinesConfigured": 11,
   "videoCount": 492,
@@ -8,7 +8,7 @@
     "ko": 491,
     "fr": 1
   },
-  "quotaUnitsUsed": 53,
+  "quotaUnitsUsed": 48,
   "apiKeysConfigured": 2,
   "vph": {
     "minIntervalHours": 6,
@@ -26,6 +26,10 @@
     {
       "channel": "https://www.youtube.com/@%EC%84%B8%EA%B3%84%EC%97%AC%ED%96%89%EC%9E%90-KR/featured",
       "error": "Channel not found for \"https://www.youtube.com/@%EC%84%B8%EA%B3%84%EC%97%AC%ED%96%89%EC%9E%90-KR/featured\""
+    },
+    {
+      "channel": "https://www.youtube.com/@RealLifeSH",
+      "error": "Channel not found for \"https://www.youtube.com/@RealLifeSH\""
     }
   ],
   "replyErrors": []
