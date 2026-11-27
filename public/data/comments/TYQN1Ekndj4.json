@@ -3,5 +3,25 @@
   "language": "ko",
   "maxAgeDays": 90,
   "disabled": false,
-  "comments": []
+  "comments": [
+    {
+      "id": "UgwMfRMZ_ycvUtLwyMR4AaABAg",
+      "author": "@윤성근-s4u",
+      "authorImage": "https://yt3.ggpht.com/ytc/AIdro_nJcEDcr38Q0KjSJL5pfRfVjF7ZgvVghIfq2LfLG8ZgL_PJsmY=s48-c-k-c0x00ffffff-no-rj",
+      "text": "한국도 그래요",
+      "likeCount": 1,
+      "publishedAt": "2026-11-26T10:50:27Z",
+      "replyCount": 1,
+      "replies": [
+        {
+          "id": "UgwMfRMZ_ycvUtLwyMR4AaABAg.AdfRPTODdMCAdg-wepZ760",
+          "author": "@SDTQDISCOVERYKR",
+          "authorImage": "https://yt3.ggpht.com/XG8OcmTCcHAGWTzJE_jZzkTcicNUWzF9NDhlPiu-3JBXYmQkFcuoLARaiJ75ptOpH5cumtNC-g=s48-c-k-c0x00ffffff-no-rj",
+          "text": "맞아요, 사람 사는 곳은 다 비슷한 것 같아요. 한국에서도 비슷한 상황이 있다니 더 공감이 가네요. 소중한 의견 남겨주셔서 감사합니다!",
+          "likeCount": 0,
+          "publishedAt": "2026-11-26T16:09:42Z"
+        }
+      ]
+    }
+  ]
 }
