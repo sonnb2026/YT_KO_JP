@@ -2,6 +2,17 @@
   "videoId": "7cCayVB8Uvs",
   "language": "fr",
   "maxAgeDays": 90,
-  "disabled": true,
-  "comments": []
+  "disabled": false,
+  "comments": [
+    {
+      "id": "UgyTLfWwz3BgjjnVloN4AaABAg",
+      "author": "@YacineAourragh",
+      "authorImage": "https://yt3.ggpht.com/ytc/AIdro_kneY-bi0bJKqNY0-E6E69YVph1lmLdW4KcpCnLeC7P6OeCu0cm50eTRv4gGnhAUKIjMw=s48-c-k-c0x00ffffff-no-rj",
+      "text": "يا رب",
+      "likeCount": 0,
+      "publishedAt": "2026-11-27T06:07:12Z",
+      "replyCount": 0,
+      "replies": []
+    }
+  ]
 }
